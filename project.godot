@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Medieval Roguelike"
+config/name="MediQuest"
 run/main_scene="uid://ko2tophmfmg8"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
