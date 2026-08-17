@@ -1,8 +1,6 @@
 class_name Player
 extends CharacterBody2D
 
-#hello
-
 #MoveSpeed
 @export var speed: float =200
 
@@ -62,8 +60,11 @@ func _physics_process(_delta):
 
 #Tracking loss of Health
 func take_damage():
-	if currentHealth > 0:
 		currentHealth -= 1
+		
+		if currentHealth < 0:
+			currentHealth = maxHealth
+			
 		print(currentHealth)
 		"""if currentHealth == 5:
 			heart_anim3.play("Half1")
