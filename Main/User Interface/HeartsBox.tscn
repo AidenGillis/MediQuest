@@ -3,8 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://cacpcfpre21fr" path="res://Main/User Interface/HeartBar.tscn" id="1_a08ig"]
 
 [node name="HeartsBox" type="HBoxContainer" unique_id=1391491870]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -110.0
+offset_right = 26.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="HeartGUI" parent="." unique_id=458836570 instance=ExtResource("1_a08ig")]
 layout_mode = 2

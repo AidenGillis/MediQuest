@@ -73,10 +73,6 @@ offset = Vector2(-1, -12)
 position = Vector2(-2, 0)
 zoom = Vector2(3, 3)
 process_callback = 0
-limit_left = -160
-limit_top = -160
-limit_right = 1008
-limit_bottom = 513
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 

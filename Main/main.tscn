@@ -14,13 +14,13 @@
 [ext_resource type="PackedScene" uid="uid://o4xldyqa5sb6" path="res://Main/User Interface/HeartsBox.tscn" id="12_f3gf5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
-size = Vector2(1174, 11.5)
+size = Vector2(1479, 11.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
-size = Vector2(3.52378, 631.4)
+size = Vector2(5.9903965, 729.2473)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
-size = Vector2(12.625, 683.25)
+size = Vector2(14.3125, 777.625)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6fdm"]
 texture = ExtResource("4_qac2q")
@@ -418,21 +418,21 @@ visible = false
 script = ExtResource("1_uhr2j")
 
 [node name="TopWall" type="CollisionShape2D" parent="Walls" unique_id=1414728986]
-position = Vector2(426, -150)
+position = Vector2(577.5, -212)
 shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="BottomWall" type="CollisionShape2D" parent="Walls" unique_id=1540210492]
-position = Vector2(425, 518)
+position = Vector2(582, 564)
 shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="RightWall" type="CollisionShape2D" parent="Walls" unique_id=952638354]
-position = Vector2(1013, 182)
+position = Vector2(1321.4999, 178.99948)
 rotation = -3.14159
 scale = Vector2(2.83782, -1.08331)
 shape = SubResource("RectangleShape2D_h2yge")
 
 [node name="LeftWall" type="CollisionShape2D" parent="Walls" unique_id=1782512080]
-position = Vector2(-167, 181)
+position = Vector2(-162.84375, 176.8125)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="WallBump" type="AudioStreamPlayer2D" parent="Walls" unique_id=1157917872]
@@ -478,10 +478,10 @@ y_sort_enabled = true
 position = Vector2(500, 314)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1599390526]
-offset = Vector2(10, 10)
-transform = Transform2D(1, 0, 0, 1, 10, 10)
 
 [node name="HeartsBox" parent="CanvasLayer" unique_id=1391491870 instance=ExtResource("12_f3gf5")]
-offset_right = 86.0
-offset_bottom = 25.0
-scale = Vector2(3, 3)
+offset_left = -130.0
+offset_top = -160.0
+offset_right = -44.0
+offset_bottom = -120.0
+scale = Vector2(4, 4)
