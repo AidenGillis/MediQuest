@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3xqyenjum07g"]
+[gd_scene format=3 uid="uid://b3xqyenjum07g"]
 
 [ext_resource type="Script" uid="uid://deu2jfac2axtr" path="res://Main/Player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://w0f708nnm4wg" path="res://Sprites/Perry-Sheet.png" id="2_8hbiy"]
@@ -54,22 +54,22 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qn1bl")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Idle",
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=47690661 groups=["player"]]
 y_sort_enabled = true
 platform_floor_layers = 0
 script = ExtResource("1_onrkg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=210342942]
 y_sort_enabled = true
 scale = Vector2(1, 1.065)
 offset = Vector2(-1, -12)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1211577143]
 position = Vector2(-2, 0)
 zoom = Vector2(3, 3)
 process_callback = 0
@@ -80,21 +80,21 @@ limit_bottom = 513
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1071214372]
 position = Vector2(0, 28.999998)
 scale = Vector2(1.3659575, 0.8764224)
 shape = SubResource("RectangleShape2D_hqtel")
 
-[node name="PlayerHitBox" type="Area2D" parent="."]
+[node name="PlayerHitBox" type="Area2D" parent="." unique_id=1010182637]
 collision_layer = 4
 collision_mask = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitBox" unique_id=828836944]
 position = Vector2(0.5, 9)
 shape = SubResource("RectangleShape2D_8hbiy")
 debug_color = Color(0.839685, 0.347066, 0.43754, 0.42)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=734327852]
 sprite_frames = SubResource("SpriteFrames_y2cg6")
 animation = &"Idle"
 frame = 4
