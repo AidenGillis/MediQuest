@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://ko2tophmfmg8"]
 
+[ext_resource type="Script" uid="uid://bexxa2dypoikf" path="res://Main/main.gd" id="1_rix8b"]
 [ext_resource type="Script" uid="uid://pxnqqj0abqeb" path="res://Main/walls.gd" id="1_uhr2j"]
 [ext_resource type="AudioStream" uid="uid://3q3o8l50lpxp" path="res://Sound Effects/Wall Bump.mp3" id="2_l5bfp"]
 [ext_resource type="Texture2D" uid="uid://ds5xl7sg7fs7p" path="res://Sprites/Village_Assets-Sheet.png" id="4_f6fdm"]
@@ -398,6 +399,7 @@ pattern_0 = SubResource("TileMapPattern_f6fdm")
 
 [node name="Main" type="Node2D" unique_id=1549037589]
 y_sort_enabled = true
+script = ExtResource("1_rix8b")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=114549623]
 visible = false
@@ -481,7 +483,7 @@ position = Vector2(500, 314)
 
 [node name="HeartsBox" parent="CanvasLayer" unique_id=1391491870 instance=ExtResource("12_f3gf5")]
 offset_left = -130.0
-offset_top = -160.0
-offset_right = -44.0
+offset_top = -120.0
+offset_right = -130.0
 offset_bottom = -120.0
 scale = Vector2(4, 4)
