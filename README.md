@@ -62,4 +62,4 @@ I’ll be posting regular updates, devlogs, and reacting to your ideas across my
 (Links coming soon...)
 
 Stay tuned — this is just the beginning.
-Git workflow test - Adam
+Git workflow test - TED
