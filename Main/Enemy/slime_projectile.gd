@@ -9,6 +9,8 @@ var spawnRot: float
 var damage: int
 
 func _ready():
+	
+	
 	global_position = spawnPos
 	global_rotation = spawnRot
 	
@@ -19,3 +21,7 @@ func _ready():
 	
 func _physics_process(_delta):
 	move_and_slide()
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.get_parent().is_in_group("player"):
+		queue_free()

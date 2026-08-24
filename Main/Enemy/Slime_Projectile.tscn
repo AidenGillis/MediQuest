@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bprjwfa4xl3h5"]
+[gd_scene format=3 uid="uid://bprjwfa4xl3h5"]
 
 [ext_resource type="Texture2D" uid="uid://rfwvcsvh81q0" path="res://Sprites/Slime-Proj-Sheet.png" id="1_lqnug"]
 [ext_resource type="Script" uid="uid://ck5esjssxw5fx" path="res://Main/Enemy/slime_projectile.gd" id="1_vtvj3"]
@@ -51,7 +51,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vwvs2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Slime_Projectile",
 "speed": 5.0
 }]
@@ -59,31 +59,34 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_vtvj3"]
 radius = 9.055386
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=73207460]
 y_sort_enabled = true
 collision_layer = 0
 collision_mask = 0
 platform_floor_layers = 0
 script = ExtResource("1_vtvj3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=795718264]
 y_sort_enabled = true
 position = Vector2(-2, 0)
 scale = Vector2(0.9944579, 0.74820817)
 shape = SubResource("CircleShape2D_2ehya")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=686366166]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_8mfqt")
 animation = &"Slime_Projectile"
 frame_progress = 0.12912776
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." unique_id=1080830311 groups=["player"]]
 scale = Vector2(0.97904557, 0.7181633)
 collision_layer = 32
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=528028159]
 position = Vector2(-2.043, 0.75)
 scale = Vector2(1.003975, 0.9291837)
 shape = SubResource("CircleShape2D_vtvj3")
+debug_color = Color(0.99394876, 0, 0.23687145, 0.41960785)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
