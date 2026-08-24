@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ci2ojifci6431"]
+
+[node name="dimOverlay" type="ColorRect" unique_id=150344671]
+anchors_preset = -1
+anchor_left = -0.87600005
+anchor_right = 1.0
+anchor_bottom = 0.851
+offset_left = -37.96
+offset_right = 70.0
+offset_bottom = -1.0400009
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5882353, 0.7058824, 0.6666667, 0.7058824)
