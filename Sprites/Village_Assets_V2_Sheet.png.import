@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://otj7e66prsev"
-path="res://.godot/imported/Dark Grass 15-tile offset V3-Sheet.png-5393b8185f46daa307859ca69063ccee.ctex"
+uid="uid://c5xfhlbayxy3f"
+path="res://.godot/imported/Village_Assets_V2_Sheet.png-53d8c2ef4a1859e05cf48d8d08a7b301.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dark Grass 15-tile offset V3-Sheet.png"
-dest_files=["res://.godot/imported/Dark Grass 15-tile offset V3-Sheet.png-5393b8185f46daa307859ca69063ccee.ctex"]
+source_file="res://Sprites/Village_Assets_V2_Sheet.png"
+dest_files=["res://.godot/imported/Village_Assets_V2_Sheet.png-53d8c2ef4a1859e05cf48d8d08a7b301.ctex"]
 
 [params]
 

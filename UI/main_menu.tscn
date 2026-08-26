@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dc7y1yedujm4g"]
 
-[ext_resource type="Script" uid="uid://bvrbkudsg4asf" path="res://main_menu.gd" id="1_7vrkn"]
-[ext_resource type="Texture2D" uid="uid://b3yhhmmamjuw7" path="res://UI/example10.jpg" id="2_fu7sn"]
+[ext_resource type="Script" uid="uid://bvrbkudsg4asf" path="res://UI/main_menu.gd" id="1_7vrkn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttgqu"]
 draw_center = false
@@ -41,11 +40,11 @@ script = ExtResource("1_7vrkn")
 [node name="TextureButton" type="TextureButton" parent="." unique_id=2049329457]
 layout_mode = 1
 
-[node name="Example10" type="Sprite2D" parent="." unique_id=1456798136]
-process_mode = 2
-position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_fu7sn")
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1274627746]
+layout_mode = 0
+offset_right = 1917.0
+offset_bottom = 1079.0
+color = Color(1, 1, 1, 0.23921569)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1876083339]
 layout_mode = 1

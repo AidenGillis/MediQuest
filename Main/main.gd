@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var hearts_box = $CanvasLayer/HeartsBox
+@onready var hearts_box = $UI/HeartsBox
 @onready var player = $TileMapBackground/Entities/Player
 @onready var slime_proj = "res://Main/Enemy/Slime_Projectile.tscn"
 

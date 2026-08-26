@@ -50,10 +50,17 @@ func _physics_process(_delta):
 func take_damage():
 	currentHealth -= 1
 		
+	if currentHealth == 0:
+		respawn()
+		
 	if currentHealth < 0:
 		currentHealth = maxHealth
 			
 	healthChanged.emit(currentHealth)
+	
+func respawn():
+	currentHealth = maxHealth
+	global_position = $"../../../PlayerSpawn".global_position
 
 #Checks for enemy attacks in player hitbox
 func _on_player_hit_box_area_entered(area: Area2D) -> void:
