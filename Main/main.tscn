@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b3xqyenjum07g" path="res://Main/Player/player.tscn" id="11_j4inf"]
 [ext_resource type="PackedScene" uid="uid://dy1sivlil5262" path="res://Main/Enemy/slime.tscn" id="11_o60nc"]
 [ext_resource type="PackedScene" uid="uid://o4xldyqa5sb6" path="res://Main/User Interface/HeartsBox.tscn" id="12_f3gf5"]
+[ext_resource type="PackedScene" uid="uid://dc7y1yedujm4g" path="res://main_menu.tscn" id="13_0jx5h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(1479, 11.5)
@@ -480,6 +481,12 @@ y_sort_enabled = true
 position = Vector2(500, 314)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1599390526]
+
+[node name="MAIN MENU" parent="CanvasLayer" unique_id=1539579472 instance=ExtResource("13_0jx5h")]
+offset_left = -379.0
+offset_top = -221.0
+offset_right = -382.0
+offset_bottom = -225.0
 
 [node name="HeartsBox" parent="CanvasLayer" unique_id=1391491870 instance=ExtResource("12_f3gf5")]
 offset_left = -130.0
