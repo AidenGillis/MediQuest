@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bokc55myp8x21"]
 
-[ext_resource type="Script" uid="uid://d1gwsjommxf5h" path="res://start_menu.gd" id="1_ia0g5"]
-[ext_resource type="Texture2D" uid="uid://co0pc4tah34vy" path="res://Start Menu.jpg" id="1_jwbto"]
+[ext_resource type="Script" uid="uid://d1gwsjommxf5h" path="res://UI/start_menu.gd" id="1_ia0g5"]
+[ext_resource type="Texture2D" uid="uid://co0pc4tah34vy" path="res://UI/pics/Start Menu.jpg" id="1_jwbto"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwbto"]
 draw_center = false
@@ -20,10 +20,10 @@ corner_radius_bottom_left = 6
 layout_mode = 3
 anchor_right = 0.583
 anchor_bottom = 1.21
-offset_left = -16.0
-offset_top = 40.0
-offset_right = -165.35999
-offset_bottom = 40.19995
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 796.64
+offset_bottom = -227.80005
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -34,27 +34,63 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 56.0
-offset_top = -24.0
-offset_right = 715.0
-offset_bottom = -338.0
+offset_left = -14.0
+offset_top = -4.0
+offset_right = 5.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="StartMenu" type="Sprite2D" parent="ColorRect" unique_id=2048276578]
-position = Vector2(640.00006, 503.99997)
-scale = Vector2(1.7062502, 0.80624986)
+position = Vector2(965, 539.00006)
+scale = Vector2(2.0083332, 0.84843737)
 texture = ExtResource("1_jwbto")
+
+[node name="Label" type="RichTextLabel" parent="ColorRect" unique_id=1898311042]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -111.5
+offset_top = 4.0
+offset_right = 128.5
+offset_bottom = 141.0
+grow_horizontal = 2
+pivot_offset = Vector2(456, 184)
+theme_override_font_sizes/normal_font_size = 95
+bbcode_enabled = true
+text = "[wave]MEDI[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="ColorRect" unique_id=1305300378]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 33.5
+offset_top = 94.0
+offset_right = 312.5
+offset_bottom = 227.0
+grow_horizontal = 2
+pivot_offset = Vector2(72, 96)
+theme_override_font_sizes/normal_font_size = 97
+bbcode_enabled = true
+text = "[wave]Quest[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1109278544]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 409.0
-offset_top = 314.0
-offset_right = -740.0
-offset_bottom = -357.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -124.5
+offset_right = 99.0
+offset_bottom = 124.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
@@ -91,40 +127,6 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vpdu5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ia0g5")
 text = "QUIT
 "
-
-[node name="Label" type="RichTextLabel" parent="." unique_id=1898311042]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -5.0
-offset_top = 32.0
-offset_right = 235.0
-offset_bottom = 169.0
-grow_horizontal = 2
-pivot_offset = Vector2(456, 184)
-theme_override_font_sizes/normal_font_size = 95
-bbcode_enabled = true
-text = "[wave]MEDI[/wave]"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="RichTextLabel" parent="." unique_id=1305300378]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 163.0
-offset_top = 128.0
-offset_right = 442.0
-offset_bottom = 261.0
-grow_horizontal = 2
-pivot_offset = Vector2(72, 96)
-theme_override_font_sizes/normal_font_size = 97
-bbcode_enabled = true
-text = "[wave]Quest[/wave]"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/START" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
