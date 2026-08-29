@@ -5,7 +5,8 @@ extends CharacterBody2D
 @export var speed: float = 200
 
 #Animations
-@onready var anim = $AnimatedSprite2D
+@onready var Idle_anim = $Idle
+@onready var Walk_anim = $Walking
 
 #HealthSystem
 signal healthChanged
@@ -19,13 +20,51 @@ var HitsWall = false
 #Runs on start
 func _ready() -> void:
 	currentHealth = maxHealth
-	anim.play("Idle")
+	Idle_anim.show()
+	Walk_anim.hide()
+	Idle_anim.play("Idle_Front")
 
 #MovementFunction
 func _physics_process(_delta):
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	
+	if Input.is_action_pressed("ui_down") == true:
+		Idle_anim.hide()
+		Walk_anim.show()
+		Walk_anim.play("Walk_Front")
+	if Input.is_action_just_released("ui_down"):
+		Walk_anim.hide()
+		Idle_anim.show()
+		Idle_anim.play("Idle_Front")
+		
+	if Input.is_action_pressed("ui_up") == true:
+		Idle_anim.hide()
+		Walk_anim.show()
+		Walk_anim.play("Walk_Back")
+	if Input.is_action_just_released("ui_up"):
+		Walk_anim.hide()
+		Idle_anim.show()
+		Idle_anim.play("Idle_Back")
+		
+	if Input.is_action_pressed("ui_right") == true:
+		Idle_anim.hide()
+		Walk_anim.show()
+		Walk_anim.play("Walk_Right")
+	if Input.is_action_just_released("ui_right"):
+		Walk_anim.hide()
+		Idle_anim.show()
+		Idle_anim.play("Idle_Right")
+		
+	if Input.is_action_pressed("ui_left") == true:
+		Idle_anim.hide()
+		Walk_anim.show()
+		Walk_anim.play("Walk_Left")
+	if Input.is_action_just_released("ui_left"):
+		Walk_anim.hide()
+		Idle_anim.show()
+		Idle_anim.play("Idle_Left")
 	
 	#Wall Collision
 	if input_vector != Vector2.ZERO:
@@ -57,7 +96,8 @@ func take_damage():
 		currentHealth = maxHealth
 			
 	healthChanged.emit(currentHealth)
-	
+
+#Puts player back to spawn position
 func respawn():
 	currentHealth = maxHealth
 	global_position = $"../../../PlayerSpawn".global_position
