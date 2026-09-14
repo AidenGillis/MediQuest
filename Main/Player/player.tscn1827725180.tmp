@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dy01i7wvgkw8y" path="res://Sprites/PerryIdle-Sheet.png" id="2_1crik"]
 [ext_resource type="Texture2D" uid="uid://cdb7rd0xrfkqn" path="res://Sprites/Perry2.png" id="3_kwyrm"]
 [ext_resource type="Texture2D" uid="uid://cwc2vh7xjaj2u" path="res://Sprites/Debug Circle.png" id="4_1crik"]
-[ext_resource type="Script" uid="uid://83102x5ynqv8" path="res://Main/Player/player_parry_radius.gd" id="4_b2fwe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
 size = Vector2(14, 4.5)
@@ -442,9 +441,7 @@ animation = &"Walk_Front"
 frame = 1
 frame_progress = 0.43371332
 
-[node name="PlayerParryRadius" type="Area2D" parent="." unique_id=612948216 groups=["enemy_projectiles"]]
-collision_mask = 32
-script = ExtResource("4_b2fwe")
+[node name="PlayerParryRadius" type="Area2D" parent="." unique_id=612948216]
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerParryRadius" unique_id=789100035]
 self_modulate = Color(1, 1, 1, 0.25882354)

@@ -56,7 +56,7 @@ func _physics_process(_delta):
 		Walk_anim.hide()
 		Idle_anim.show()
 		Idle_anim.play("Idle_Right")
-		
+
 	if Input.is_action_pressed("ui_left") == true:
 		Idle_anim.hide()
 		Walk_anim.show()
@@ -65,6 +65,10 @@ func _physics_process(_delta):
 		Walk_anim.hide()
 		Idle_anim.show()
 		Idle_anim.play("Idle_Left")
+	
+	#Parrying
+	if Input.is_action_just_pressed("Parry") == true  and "res://Main/Enemy/Slime_Projectile.tscn":
+		parry()
 	
 	#Wall Collision
 	if input_vector != Vector2.ZERO:
@@ -106,3 +110,22 @@ func respawn():
 func _on_player_hit_box_area_entered(area: Area2D) -> void:
 	if area.collision_layer & (1 << 5):
 		take_damage()
+
+func parry():
+	var projectiles = $PlayerParryRadius.get_overlapping_areas()
+
+	for area in projectiles:
+		if area.is_in_group("enemy_projectiles"):
+			var projectile = area.get_parent()
+			
+			if is_instance_valid(projectile.shooter):
+				projectile.is_parried = true
+				
+				area.collision_layer = 0
+				area.collision_mask = 0
+				
+				area.set_collision_layer_value(5, true)
+				area.set_collision_mask_value(4, true)
+
+				area.remove_from_group("enemy_projectiles")
+				area.add_to_group("player_projectiles")

@@ -78,7 +78,7 @@ sprite_frames = SubResource("SpriteFrames_8mfqt")
 animation = &"Slime_Projectile"
 frame_progress = 0.12912776
 
-[node name="Hitbox" type="Area2D" parent="." unique_id=1080830311 groups=["player"]]
+[node name="Hitbox" type="Area2D" parent="." unique_id=1080830311 groups=["enemy_projectiles"]]
 scale = Vector2(0.97904557, 0.7181633)
 collision_layer = 32
 collision_mask = 4

@@ -8,7 +8,12 @@ extends CharacterBody2D
 var start_position: Vector2
 var target: Player
 
+var maxHealth: int = 3
+var currentHealth = maxHealth
+
 func _ready():
+	$SlimeHitbox.add_to_group("enemy_hitbox")
+	currentHealth = maxHealth
 	start_position = global_position
 	target = player
 	anim.connect("frame_reached", _on_slime_frame_reached)
@@ -25,7 +30,6 @@ func update_velocity():
 	else:
 		anim.stop()
 	
-
 func _physics_process(_delta: float) -> void:
 	update_velocity()
 	move_and_slide()
@@ -35,6 +39,7 @@ func shoot():
 		return
 	
 	var instance = projectile.instantiate()
+	instance.shooter = self
 	
 	var to_player: Vector2 = target.global_position - global_position
 	var dir: Vector2 = to_player.normalized()
@@ -45,6 +50,17 @@ func shoot():
 	instance.damage = 1
 	
 	get_tree().current_scene.call_deferred("add_child", instance)
+	
+func take_damage():
+	currentHealth -= 1
+	print(currentHealth)
+		
+	if currentHealth == 0:
+		queue_free()	
+	
+func _on_slime_hitbox_area_entered(area: Area2D) -> void:
+	if area.collision_layer & (1 << 4):
+		take_damage()
 	
 func _on_slime_frame_reached(frame: int):
 	if frame == 0:

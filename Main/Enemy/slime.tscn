@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dy1sivlil5262"]
+[gd_scene format=3 uid="uid://dy1sivlil5262"]
 
 [ext_resource type="Script" uid="uid://c1g0aoo6y428w" path="res://Main/Enemy/slime.gd" id="1_x7vio"]
 [ext_resource type="Texture2D" uid="uid://deecugrvipbsy" path="res://Sprites/Slime-Jump-Sheet.png" id="2_p5reb"]
@@ -190,7 +190,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8dfe0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Slime_bounce",
 "speed": 5.0
 }]
@@ -199,22 +199,37 @@ animations = [{
 radius = 2.0
 height = 34.0
 
-[node name="Slime" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5eqof"]
+radius = 9.0
+height = 28.0
+
+[node name="Slime" type="CharacterBody2D" unique_id=1441012274]
 platform_floor_layers = 0
 script = ExtResource("1_x7vio")
 
-[node name="Slime_Animation" type="AnimatedSprite2D" parent="."]
+[node name="Slime_Animation" type="AnimatedSprite2D" parent="." unique_id=846585318]
 position = Vector2(0, -26)
 sprite_frames = SubResource("SpriteFrames_gbm1g")
 animation = &"Slime_bounce"
 speed_scale = 2.75
 script = ExtResource("3_djyd7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1813681024]
 y_sort_enabled = true
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_nigqn")
 
-[node name="SlimeSquelch" type="AudioStreamPlayer2D" parent="."]
+[node name="SlimeSquelch" type="AudioStreamPlayer2D" parent="." unique_id=614628538]
 position = Vector2(0, -26)
 stream = ExtResource("3_p5reb")
+
+[node name="SlimeHitbox" type="Area2D" parent="." unique_id=1878032257 groups=["enemy_hitbox"]]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlimeHitbox" unique_id=835351091]
+position = Vector2(-1.9073486e-06, -6)
+rotation = 1.5777776
+shape = SubResource("CapsuleShape2D_5eqof")
+
+[connection signal="area_entered" from="SlimeHitbox" to="." method="_on_slime_hitbox_area_entered"]
