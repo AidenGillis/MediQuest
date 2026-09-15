@@ -401,6 +401,7 @@ pattern_0 = SubResource("TileMapPattern_f6fdm")
 [node name="Main" type="Node2D" unique_id=1549037589]
 y_sort_enabled = true
 script = ExtResource("1_rix8b")
+slime_scene = ExtResource("11_o60nc")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=114549623]
 visible = false
@@ -474,6 +475,7 @@ position = Vector2(707, -62)
 [node name="Slime" parent="TileMapBackground/Entities" unique_id=227674135 instance=ExtResource("11_o60nc")]
 z_index = 1
 y_sort_enabled = true
+position = Vector2(66, 74)
 
 [node name="Pig" parent="TileMapBackground/Entities" unique_id=410001007 instance=ExtResource("11_f3gf5")]
 z_index = 1
@@ -495,3 +497,7 @@ scale = Vector2(4, 4)
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=2126652831]
 position = Vector2(707, -62)
+
+[node name="SlimeRespawnTimer" type="Timer" parent="." unique_id=1311249896]
+wait_time = 5.0
+one_shot = true
