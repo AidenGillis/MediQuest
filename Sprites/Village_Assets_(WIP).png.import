@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcppargyerxds"
-path="res://.godot/imported/Grass Edge BL.png-bee462fb1d475aab158a1807deac9bf7.ctex"
+uid="uid://b3ktow1x6mpga"
+path="res://.godot/imported/Village_Assets_(WIP).png-3b377859c15a54009dce81802dab65c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Grass Edge BL.png"
-dest_files=["res://.godot/imported/Grass Edge BL.png-bee462fb1d475aab158a1807deac9bf7.ctex"]
+source_file="res://Sprites/Village_Assets_(WIP).png"
+dest_files=["res://.godot/imported/Village_Assets_(WIP).png-3b377859c15a54009dce81802dab65c8.ctex"]
 
 [params]
 

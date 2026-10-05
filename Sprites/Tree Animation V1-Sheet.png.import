@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5xfhlbayxy3f"
-path="res://.godot/imported/Village_Assets_V2_Sheet.png-53d8c2ef4a1859e05cf48d8d08a7b301.ctex"
+uid="uid://dal2riupc0w3b"
+path="res://.godot/imported/Tree Animation V1-Sheet.png-7d01645bc6f8e725176531aa06a06860.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Village_Assets_V2_Sheet.png"
-dest_files=["res://.godot/imported/Village_Assets_V2_Sheet.png-53d8c2ef4a1859e05cf48d8d08a7b301.ctex"]
+source_file="res://Sprites/Tree Animation V1-Sheet.png"
+dest_files=["res://.godot/imported/Tree Animation V1-Sheet.png-7d01645bc6f8e725176531aa06a06860.ctex"]
 
 [params]
 
