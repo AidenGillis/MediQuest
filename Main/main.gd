@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var hearts_box = $UI/HeartsBox
-@onready var player = $TileMapBackground/Entities/Player
+@onready var player = $Entities/Player
 
 #Slime
 @onready var slime_proj = "res://Main/Enemy/Slime_Projectile.tscn"
@@ -15,8 +15,8 @@ func _ready():
 	player.healthChanged.connect(hearts_box.updateHearts) #Connects the event of player losing health to update the hearts
 	
 	#Slime
-	slime_spawn_pos = $TileMapBackground/Entities/Slime.global_position
-	$TileMapBackground/Entities/Slime.tree_exited.connect(_on_slime_removed)
+	slime_spawn_pos = $Entities/Slime.global_position
+	$Entities/Slime.tree_exited.connect(_on_slime_removed)
 	$SlimeRespawnTimer.timeout.connect(_respawn_slime)
 	
 #Slime Functions

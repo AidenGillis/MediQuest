@@ -104,7 +104,7 @@ func take_damage():
 #Puts player back to spawn position
 func respawn():
 	currentHealth = maxHealth
-	global_position = $"../../../PlayerSpawn".global_position
+	global_position = $"../../PlayerSpawn".global_position
 
 #Checks for enemy attacks in player hitbox
 func _on_player_hit_box_area_entered(area: Area2D) -> void:
